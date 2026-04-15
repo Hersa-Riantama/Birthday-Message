@@ -269,13 +269,14 @@
         if (window.petalInterval) return;
         window.petalInterval = setInterval(() => {
           const petal = document.createElement("div");
-          const symbols = ["🌸", "✨", "💖", "💌", "💝", "💗", "🦋", "🌹", "🎂", "🎁"];
+          const symbols = ["🌸", "✨", "💖", "💌", "💝", "💗", "🌹", "🌷", "🎂", "🎁", "🎀"];
           petal.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
           petal.className = "petal text-xl md:text-2xl";
           petal.style.left = Math.random() * 100 + "vw";
           petal.style.top = "-50px";
           petal.style.animationDuration = Math.random() * 4 + 4 + "s";
           petal.style.opacity = Math.random() * 0.7 + 0.3;
+          petal.style.transform = `rotate(${Math.random() * 360}deg)`;
           document.body.appendChild(petal);
           setTimeout(() => petal.remove(), 8000);
         }, 600);
